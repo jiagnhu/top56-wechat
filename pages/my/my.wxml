@@ -1,0 +1,24 @@
+<!--my.wxml-->
+<view class="my_container">
+  <view class="userinfo" >
+    <button wx:if="{{!hasUserInfo && canIUse}}" class='user_button' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else><!-- bindtap="bindViewTap"-->
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <view class="user-adderss" bindtap='adderss'>
+      <image src='http://118.31.54.90:8010/WinXinPic/ico_address@2x.png'></image>
+      <text>地址管理</text>
+    </view>
+    <view class="user-oder" bindtap='oder'>
+      <image src='http://118.31.54.90:8010/WinXinPic/ico_order@2x.png'></image>
+      <text>我的订单</text>
+    </view>
+    <view class="user-oder" bindtap='customerBind' style='border-bottom: 1rpx solid #fff;'>
+      <image src='http://118.31.54.90:8010/WinXinPic/ico_order@2x.png'></image>
+      <text>用户绑定</text>
+    </view>
+  </view>
+</view>

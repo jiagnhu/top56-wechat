@@ -1,0 +1,246 @@
+/**index.wxss**/
+.home {
+  font-size: 24rpx;
+  position: relative;
+}
+
+.home_hd{
+  padding:0px;
+  height: 442rpx;  
+  background-color: #0D449D;
+  position: relative;
+}
+
+.home_title{
+  position: relative;
+  height: 172rpx; 
+}
+
+.home_title view {
+  position: absolute;
+  width: 100%;
+  top: 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home_imag {
+  height: 100%;
+  width: 100%;
+}
+
+.home_imag2{
+  height:58rpx;
+  width: 296rpx;
+}
+
+.home-search{
+  position: absolute;
+  top: 144rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-search .phcolor{
+  color: #fff;
+}
+
+.weui-flex__item{
+  position: relative;
+}
+
+.home-search_icon{
+  position: absolute;
+  width: 120rpx;
+  height: 50rpx;
+  right: 20rpx;
+  top: 8rpx;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-search_icon_img{
+  margin-left: 16rpx;
+  margin-top:8rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.home-search_icon_img2{
+  margin-right:16rpx;
+  margin-top:10rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.home_search{
+  background-color: #0B3373;
+  color: #fff;
+  width: 556rpx;
+  height: 66rpx;
+  padding-left: 20rpx;
+  padding-right: 144rpx;
+}
+
+.home_link{
+  margin-top: 98rpx;
+}
+
+.placeholder1{
+  margin-left: 46rpx;
+}
+
+.placeholder2{
+  margin-left: 186rpx;
+}
+
+.placeholder3{
+  margin-left: 174rpx;
+}
+
+.home_link_group{
+  text-align: center;
+  height: 140rpx;
+  width: 94rpx; 
+  color: #cfcfcf;
+}
+
+.home_imag_deliver{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.home_link_text{
+  margin: -2rpx;
+  margin-top: 24rpx;
+  color: #fff;
+}
+
+.home_bd{
+   height: 100%;
+}
+
+.home_bd_empty{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home_bd_empty image{
+  margin-top: 60rpx;
+  width: 322rpx;
+  height: 232rpx;
+}
+
+.home_bd_empty view{
+  color: #999999;
+  margin-top: 20rpx;
+}
+
+.home_bd_empty button{
+  background-color: #002575;
+  width: 260rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  border-radius: 0px;
+  color: #fff;
+  margin-top: 60rpx;
+}
+
+.home_bd_Waybill{
+  height: 900rpx;
+  background-color: #F2F2F2;
+}
+
+
+.order_content {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  height: 240rpx;
+  color: #999;
+ 
+
+}
+
+.order_up {
+  padding: 0rpx 24rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+
+
+.order_inif {
+  height: 100rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order_inif_icon {
+  width: 220rpx;
+  height: 46rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.order_inif_send {
+  height: 94rpx;
+  width: 150rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 20rpx;
+  display: block;
+  text-align: center;
+}
+
+.order_inif_send view {
+  line-height: 40rpx;
+}
+
+.order_inif_conle {
+  height: 94rpx;
+  width: 150rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 20rpx;
+  display: block;
+  text-align: center;
+}
+
+.order_inif_conle view {
+  line-height: 40rpx;
+}
+
+.order_inif_adderss {
+  color: #000;
+}
+
+.order_inif_name {
+  font-size: 24rpx;
+}
+
+.order_time {
+  padding: 0rpx 24rpx;
+  line-height: 64rpx;
+  font-size: 24rpx;
+}
+
+.order_imag{
+  margin: 20rpx 10rpx 0rpx 0rpx;
+  width: 32rpx;
+  height: 40rpx;
+  float: left;
+}

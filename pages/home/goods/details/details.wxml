@@ -1,0 +1,45 @@
+<view class='page details'>
+  <view class='details_hd'>
+    <view style='height:22rpx;'></view>
+    <view style='color:#333333;'>货品名称</view>
+    <view class='details_button'>
+      <view catchtap='selectType' class="{{ styleLsit[0].isChecked ? 'colorStyle':'colorStyle2'}}" data-label="日用品">
+      日用品</view>
+      <view catchtap='selectType' class="{{ styleLsit[1].isChecked ? 'colorStyle':'colorStyle2'}}" data-label="文件">文件</view>
+      <view catchtap='selectType' class="{{ styleLsit[2].isChecked ? 'colorStyle':'colorStyle2'}}" data-label="数码产品">
+      数码产品</view>
+    </view>
+    <view class='details_button'>
+      <view catchtap='selectType' class="{{ styleLsit[3].isChecked ? 'colorStyle':'colorStyle2'}}" data-label="服装">服装</view>
+      <view catchtap='selectType' class="{{ styleLsit[4].isChecked ? 'colorStyle':'colorStyle2'}}" data-label="食品">食品</view>
+      <view catchtap='selectType' class="{{ styleLsit[5].isChecked ? 'colorStyle':'colorStyle2'}}" data-label="其他">其他</view>
+    </view>
+    <view style='height:22rpx;'></view>
+  </view>
+  <view class='other'  hidden='{{isother}}'>
+    <input  class='other_input' maxlength='20' bindinput='getotherValue' value='{{otherValue}}' placeholder='请输入货品名称'/>
+  </view>
+  <view class='details_bd'>
+    <view class='details_number'>
+      <text class='details_text'><text>件数:</text></text>
+      <button catchtap='number_reduce'  class='button_border'  data-label="件数">-</button>
+      <input value='{{goodsDetails.numberValue}}' bindinput='manualInput' data-lable='件数' type='number' />
+      <button catchtap='number_plus'class='button_border'  data-label="件数">+</button>
+    </view>
+    <view class='details_number'>
+      <text class='details_text'><text>重量(KG):</text></text>
+      <button catchtap='number_reduce' class='button_border'  data-label="重量">-</button>
+      <input value='{{goodsDetails.weightValue}}'  bindinput='manualInput' data-lable='重量' type='digit' />
+      <button catchtap='number_plus' class='button_border'  data-label="重量">+</button>
+    </view>
+    <view class='details_number'>
+      <text class='details_text'><text>体积(m³):</text></text>
+      <button catchtap='number_reduce' class='button_border'  data-label="体积">-</button>
+      <input value='{{goodsDetails.volumeVlaue}}'   bindinput='manualInput' data-lable='体积' type='digit' />
+      <button catchtap='number_plus' class='button_border'  data-label="体积">+</button>
+    </view>
+  </view>
+  <view class='details_fd'>
+    <button catchtap='determine' disabled='{{isdisabled}}' style="background-color:{{buttonColor}}; color: #fff;">确定</button>
+  </view>
+</view>

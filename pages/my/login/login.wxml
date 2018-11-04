@@ -1,0 +1,38 @@
+<view class='page login'>
+<form bindsubmit="land">
+    <view class="added_cell">
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">当前登陆</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='text' name="user" value='{{user}}' disabled='true' />
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">手机号</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='number' name="phone" value='{{phone}}' maxlength='11' 
+          placeholder="请输入11位手机号"  bindinput='getPhoneValue' />
+          <button class='cerification_code' type="primary" plain="true" catchtap='getVerificationCode' 
+          disabled='{{disabled}}'>{{codename}}</button>  
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">验证码</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" name="code" type='number' value='{{code}}' bindinput='InputValidation' placeholder="验证码" />
+        </view>
+      </view>
+      <view class='added_ft'>
+        <button class='added_ft_button'  style="background-color:{{buttonColor}}" disabled="{{isdisabled}}" formType="submit">
+        绑定</button>
+        <button class='added_ft_button'  style="background-color:{{buttonColor2}}" disabled="{{isdisabled2}}" bindtap='untie'>解绑</button>
+      </view>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,86 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar order_navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item.label}}（{{item.Number}}）</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" 
+        style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);">
+        </view>
+      </view>
+      <view style='height:100%;padding-top:100rpx;'>
+        <scroll-view class="weui-tab__content" hidden="{{activeIndex != 0}}" scroll-y style='height:100%;'>
+          <view wx:if="{{isRecord}}" class='order_empty'>
+            <view class='empty_image'>
+              <image src='http://118.31.54.90:8010/WinXinPic/ico_home_feedback1@2x.png'></image>
+              <view>还没有找到您的下单记录哦~</view>
+            </view>
+          </view>
+          <view wx:else>
+            <view class='order_content' wx:for="{{coledInifList}}" wx:key="{{index}}" bindtap='viewDetails' 
+            data-planno="{{item.planNO}}" data-status="{{item.status}}">
+              <view class='order_up'>
+                <view>
+                <image  src='http://118.31.54.90:8010/WinXinPic/ico_send@2x.png' class='order_imag'></image>
+                {{item.planNO}}
+                </view>
+                <view style='color:#0D449D'>至上快运</view>
+              </view>
+              <view class='order_inif'>
+                <view class='order_inif_send'>
+                  <view class='order_inif_adderss'>{{item.sdStation}}</view>
+                  <view class='order_inif_name'>{{item.sdName}}</view>
+                </view>
+                <view class='order_inif_icon' style="background-image: url({{item.stateImag}});background-size:cover;">
+                  <text>{{item.status}}</text>
+                </view>
+                <view class='order_inif_conle'>
+                  <view class='order_inif_adderss'>{{item.deliStation}}</view>
+                  <view class='order_inif_name'>{{item.reConsinee}} </view>
+                </view>
+              </view>
+              <view class='order_time'>下单时间：{{item.planDate}}</view>
+            </view>
+          </view>
+        </scroll-view>
+        <scroll-view class="weui-tab__content" hidden="{{activeIndex != 1}}" scroll-y style='height:100%;'>
+          <view wx:if="{{isRecord2}}" class='order_empty'>
+            <view class='empty_image'>
+              <image src='http://118.31.54.90:8010/WinXinPic/ico_home_feedback1@2x.png'></image>
+              <view>还没有找到您的下单记录哦~</view>
+            </view>
+          </view>
+          <view wx:else>
+            <view class='order_content' wx:for="{{sendInifList}}" wx:key="{{index}}" data-planno="{{item.planNO}}"
+             bindtap='viewDetails2' data-status="{{item.status}}">
+              <view class='order_up'>
+                <view>
+                <image src='http://118.31.54.90:8010/WinXinPic/ico_collect@2x.png' class='order_imag'></image>
+                {{item.planNO}}
+                </view>
+                <view style='color:#0D449D'>至上快运</view>
+              </view>
+              <view class='order_inif'>
+                <view class='order_inif_send'>
+                  <view class='order_inif_adderss'>{{item.sdStation}}</view>
+                  <view class='order_inif_name'>{{item.sdName}}</view>
+                </view>
+                <view class='order_inif_icon' style="background-image: url({{item.stateImag}});background-size:cover;">
+                  <text>{{item.status}}</text>
+                </view>
+                <view class='order_inif_conle'>
+                  <view class='order_inif_adderss'>{{item.deliStation}}</view>
+                  <view class='order_inif_name'>{{item.reConsinee}} </view>
+                </view>
+              </view>
+              <view class='order_time'>下单时间：{{item.planDate}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

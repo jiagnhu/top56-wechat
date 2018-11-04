@@ -1,0 +1,36 @@
+<view class='time'>
+  <view class='time_hd'> 
+    <view class="time_hd_select {{index == cataSelect ? 'tick':''}}"
+    wx:for= "{{timeLsit}}" wx:key="{{index}}" data-index="{{index}}" bindtap='selectDate'>
+      <view class="time_select_time" data-index="{{index}}" >{{item.date}} {{item.time}}</view>
+      <view data-index="{{index}}"  class="displayTick {{index == cataSelect ? 'isnone':''}}" >
+         <image src='http://118.31.54.90:8010/WinXinPic/ico_gougou.png' bindtap='details' 
+         style='width:26rpx; height:18rpx;'></image>
+      </view><!--√-->
+    </view>
+  </view>
+  <view class='time_bd' style="display: {{isdisplay}};"  >
+    <view style='height:20rpx;'></view>
+    <view class='time_bd_abroad'>
+      <view class='time_bd_morning'>
+        <button catchtap='selectTime' disabled='{{disabled1}}'
+        class="time_bd_button {{ styleLsit[0].isChecked ? 'colorStyle':'colorStyle2'}}"
+        data-label="09:00-11:00">09:00-11:00</button>
+        <button catchtap='selectTime'  disabled='{{disabled2}}' 
+        class="time_bd_button {{ styleLsit[1].isChecked ? 'colorStyle':'colorStyle2'}}"
+        data-label="11:00-13:00">11:00-13:00</button>
+      </view>
+      <view class='time_bd_afternoon'>
+        <button catchtap='selectTime' disabled='{{disabled3}}'
+        class="time_bd_button {{ styleLsit[2].isChecked ? 'colorStyle':'colorStyle2'}}"
+        data-label="13:00-15:00">13:00-15:00</button>
+        <button catchtap='selectTime'  disabled='{{disabled4}}'
+        class="time_bd_button {{ styleLsit[3].isChecked ? 'colorStyle':'colorStyle2'}}"
+        data-label="15:00-17:00">15:00-17:00</button>
+      </view>
+    </view>
+  </view>
+  <view class='time_fd'>
+    <button bindtap='determine'  disabled='{{isdisabled}}'  style='background-color: {{buttonColor}};'>确定</button>
+  </view>
+</view>

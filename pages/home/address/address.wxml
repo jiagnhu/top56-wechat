@@ -1,0 +1,38 @@
+<view class='page send'>
+  <view style='height:20rpx;'></view>
+  <view class='send_search'>
+    <input placeholder='请输入姓名/联系方式进行搜索' bindinput='nameQuery' value='{{queryName}}'/>
+    <image src='http://118.31.54.90:8010/WinXinPic/ico_search@2x.png' class='send_search_imag' bindtap='search'></image>
+  </view>
+  <view style='height:20rpx;'></view>
+  <scroll-view style="height:80vh;" scroll-y>
+    <view class='send_information' wx:for="{{information}}" wx:key="{{item}}">
+      <view class='send_info_tel' data-index="{{index}}" catchtap='selseAddes'>
+        <view class='send_info_upper'>
+          <view style='overflow: hidden;height:40rpx;width:144rpx;'>{{item.name}}</view>
+          <view class='send_info_lower'>{{item.phoneNumber}}</view>
+        </view>
+        <view style='overflow: hidden;height:40rpx; padding-right:10rpx;'>
+        {{item.state + item.city+ item.countySeat+ item.detailedAddr}}</view>
+      </view>
+      <view class='send_info_edit'>
+        <view class='send_info_default'>
+          <radio-group class="radio-group" catch:change="radioChange" data-id='{{item.id}}'
+          data-isDefaultOK='{{item.isDefaultOK}}' data-index="{{index}}">
+            <radio class="send_info_radio" value="{{item.isDefaultOK}}" checked="{{item.isDefaultOK}}" />
+          </radio-group>
+          <view>默认地址</view>
+        </view>
+        <view class='send_info_operation'>
+          <view bindtap='deleted' data-id='{{item.id}}'>删除</view>
+          <image src='http://118.31.54.90:8010/WinXinPic/ico_delete@2x.png' bindtap='deleted' data-index='{{index}}'></image>
+          <view bindtap='edit' data-index='{{index}}'>编辑</view>
+          <image src='http://118.31.54.90:8010/WinXinPic/ico_edit@2x.png' bindtap='edit' data-index='{{index}}'></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='send_fd'>
+    <button catchtap='addAddress'>新增地址</button>
+  </view>
+</view>

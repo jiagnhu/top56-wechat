@@ -1,0 +1,50 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+page{
+    background-color: #fff;
+    font-size: 28rpx;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    height: 100vh;
+    overflow:hidden;
+}
+.page__hd {
+    padding: 0rpx;
+}
+
+.page__title {
+    text-align: left;
+    font-size: 40rpx;
+    font-weight: 400;
+}
+
+.page__bd {
+    padding-bottom: 80rpx;
+}
+.page__bd_spacing {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.page__ft{
+    padding-bottom: 20rpx;
+    text-align: center;
+}
+
+
+
+.page__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: left;
+    font-size: 14px;
+}

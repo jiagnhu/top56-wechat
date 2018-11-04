@@ -1,0 +1,28 @@
+<!--运单详情-->
+<view class='track'>
+  <view class='track_hd'></view>
+  <view class='track_comter'>
+    <view class='track_comter_hd'>
+      <view class='track_comter_hd_view'>
+        <image src='http://118.31.54.90:8010/WinXinPic/logo@2x.png' class='track_comter_hd_img'></image>
+        <view>{{array[0].jobno}}</view>
+      </view>
+      <image src='{{imgUrl}}' class='track_comter_hd_images'></image>
+    </view>
+    <scroll-view class='track_comter_db' scroll-y>
+      <view style='height:10rpx;'></view>
+      <view class='track_time_axis' wx:for="{{array}}" wx:key="{{index}}">
+        <view class='track_time'>
+          <view>{{item.scannerTime}}</view>
+          <view>{{item.scannerDate}}</view>
+          <image src='{{item.img}}' class='track_time_img' style='width:{{item.size}};height:{{item.size}};right:{{item.location}}'></image>
+          <view class='track_time_line' hidden="{{item.hidden}}"></view>
+        </view>
+        <view class='track_time_details'>
+          {{item.scannerRecord}}
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+</view>

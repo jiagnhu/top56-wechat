@@ -1,0 +1,96 @@
+.track {
+  height: 100vh;
+  position: relative;
+  background-color: #f2f2f2;
+}
+
+.track_hd {
+  height: 254rpx;
+  background-color: #0d449d;
+  border-radius: 0 0 100rpx 100rpx;
+}
+
+.track_comter {
+  position: absolute;
+  top: 20rpx;
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  height: 96.5%;
+  width: 700rpx;
+  background-color: #fff;
+}
+
+.track_comter_hd {
+  height: 220rpx;
+  border-bottom: 1px solid #ccc;
+  color: #ddd;
+  font-size: 28rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.track_comter_hd_view {
+  margin-top: 40rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.track_comter_hd_img {
+  width: 198rpx;
+  height: 116rpx;
+}
+
+.track_comter_hd_images {
+  position: absolute;
+  right: 40rpx;
+  top: 20rpx;
+  width: 98rpx;
+  height: 98rpx;
+}
+
+.track_comter_db {
+  height: 81%;
+}
+
+.track_time_axis {
+  height: 150rpx;
+  font-size: 28rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+.track_time {
+  width: 250rpx;
+  text-align: right;
+  line-height: 32rpx;
+  padding-right: 16rpx;
+  position: relative;
+}
+
+.track_time_details {
+  line-height: 32rpx;
+  padding-left: 16rpx;
+  width: 332rpx;
+}
+
+.track_time_img {
+  position: absolute;
+  top: 26rpx;
+  right: -5rpx;
+  width: 10rpx;
+  height: 10rpx;
+}
+
+.track_time_line {
+  position: absolute;
+  top: 52rpx;
+  right: -2rpx;
+  width: 1rpx;
+  z-index: 10;
+  height: 114rpx;
+  border-right: 1rpx solid #ddd;
+}

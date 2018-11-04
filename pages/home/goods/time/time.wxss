@@ -1,0 +1,90 @@
+
+.time{
+  height: 100vh;
+  font-size: 28rpx;
+  background-color: #F2F2F2;
+}
+
+.time_hd{
+  height: 278rpx;
+  background-color: #ffffff;
+}
+
+.time_hd_select{
+  height: 68rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rpx 28rpx;
+}
+
+.time_bd{
+  height: 196rpx;
+  margin-top: 20rpx;
+  background-color: #ffffff;
+}
+
+.time_bd_abroad{
+  height: 160rpx;
+  margin: 0rpx 78rpx; 
+  color: #333333;
+ 
+}
+.time_bd_morning{
+  display: flex;
+  justify-content:space-between;
+}
+
+.time_bd_afternoon{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content:space-between;
+}
+
+.time_bd_button{
+  height: 68rpx;
+  width: 268rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border-radius: 0rpx;
+  background-color: #dce8f5;
+  border: 1rpx solid #C4C4C4;
+}
+
+.time_fd{
+  height: 68rpx;
+  margin: 44rpx;
+}
+
+
+.time_fd button{
+  font-size: 28rpx;
+  background-color: #C4C4C4;
+  color: #ffffff;
+  border-radius: 0rpx;
+}
+
+.colorStyle2 {
+   color: #000000;
+  font-size: 28rpx;
+  background-color: #fff;
+}
+.colorStyle{
+  color: #ffffff;
+  font-size: 28rpx;
+  background-color: #ffb540;
+}
+
+.tick{
+  color: #FF8C00;
+}
+.displayTick{
+  display: none;
+}
+
+.isnone{
+  display: block;
+}
+

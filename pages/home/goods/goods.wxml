@@ -1,0 +1,146 @@
+<view class='page goods'>
+  <form bindsubmit="formSubmit">
+    <view class='goods_hd'>
+      <view class='goods_info' style='border-bottom: 1px solid #E5E5E5;' bindtap='selectAddress' id="send">
+        <view class='goos_test'>
+          <image src='http://118.31.54.90:8010/WinXinPic/ico_send@2x.png' class='goods_imag'></image>
+          <view class='goods_test_noe'>
+            <view class='goods_test_er goods_name' >
+              <view style='width:140rpx; height:100%;'>{{sendParams.name}}</view>
+              <view style='height100%;'>{{sendParams.phoneNumber}}</view>
+            </view>
+            <view class='goods_test_er' >
+              {{sendParams.state + sendParams.city + sendParams.countySeat + sendParams.detailedAddr}}
+            </view>
+          </view>
+        </view>
+        <image src='http://118.31.54.90:8010/WinXinPic/ico_jum@2x.png' bindtap='selectAddress'  class='goods_imag2'></image>
+      </view>
+      <view class='goods_info' bindtap='selectAddress' id='collect'>
+        <view class='goos_test'>
+          <image src='http://118.31.54.90:8010/WinXinPic/ico_collect@2x.png' class='goods_imag'></image>
+          <view class='goods_test_noe'>
+            <view class='goods_test_er goods_name' >
+              <view style='width:140rpx; height:100%;'>{{collectParams.name}}</view>
+              <view style='height100%;'>{{collectParams.phoneNumber}}</view>
+            </view>
+            <view class='goods_test_er' >
+              {{collectParams.state + collectParams.city + collectParams.countySeat + collectParams.detailedAddr}}
+            </view>
+          </view>
+        </view>
+         <image src='http://118.31.54.90:8010/WinXinPic/ico_jum@2x.png' bindtap='selectAddress' class='goods_imag2'></image>
+      </view>
+    </view>
+    <view class='goods_bd'>
+      <view style='height:24rpx'></view>
+      <view class='goods_bd_middle'>
+        <view class='goods_bd_middle_'>
+          <view class='goods_bd_inof' bindtap='details'>货物信息</view>
+          <view class='goods_bd_show'>
+            <view class='goods_bd_show_name'>{{goodsName}}</view><view>{{goodsNumber}}</view>
+          </view>
+          <image src='http://118.31.54.90:8010/WinXinPic/ico_jum@2x.png' bindtap='details' class='goods_bd_imag'></image>
+        </view>
+        <view class='goods_bd_middle_ goods_bd_middle_right'>
+          <view class='goods_bd_inof' bindtap='increment'>增值服务</view>
+          <view class='goods_bd_show'>
+            <view>{{incrementName}}</view><view>{{collection}}</view>
+          </view>
+          <image src='http://118.31.54.90:8010/WinXinPic/ico_jum@2x.png' bindtap='increment' class='goods_bd_imag'></image>
+        </view>
+      </view>
+      <view style='height:24rpx'></view>
+      <view class='goods_bd_middle'>
+        <picker bindchange="selectService" value="{{index}}" range-key="fieldName" range="{{serviceModeList}}">
+          <view class='goods_bd_middle_'>
+            <view class='goods_bd_inof2'>服务方式</view>
+            <view class='goods_bd_show'>
+              <input value='{{serviceValue}}' name="serviceValue" disabled />
+            </view>
+            <image src='http://118.31.54.90:8010/WinXinPic/ico_jum@2x.png' class="goods_bd_imag "></image>
+          </view>
+        </picker>
+        <picker bindchange="selectPayment" value="{{index}}" range-key="{{'fieldName'}}"
+        range="{{paymentModeList}}">
+          <view class='goods_bd_middle_ goods_bd_middle_right'>
+            <view class='goods_bd_inof'>付款方式</view>
+            <view class='goods_bd_show'>
+              <input value='{{paymentValue}}' name="paymentValue" disabled />
+            </view>
+            <image src='http://118.31.54.90:8010/WinXinPic/ico_jum@2x.png' class="goods_bd_imag "></image>
+          </view>
+        </picker>
+      </view>
+      <view style='height:24rpx'></view>
+      <view class='goods_info goods_fd' bindtap='goodsDate'>
+        <view style='height:14rpx'></view>
+        <view class='goods_fd_time'>
+          <view>预约发货时间</view>
+          <view>{{mydate}} {{mytime}}</view>
+        </view>
+        <image src='http://118.31.54.90:8010/WinXinPic/ico_jum@2x.png' class='goods_imag2 goods_fd_imag'></image>
+      </view>
+      <view style='height:24rpx'></view>
+      <view class='goods_info goods_fd'>
+        <view style='height:12rpx'></view>
+        <view>
+          <input type='text' name='messageBoard' placeholder='有什么话对小哥说~~' value='{{messageBoard}}'
+          placeholder-class="goods_fd_phcolor" maxlength='20' />
+        </view>
+      </view>
+    </view>
+    <view class='goods_ft'>
+      <view class='goods_ft_agree'>
+        <view style='height:32rpx;'></view>
+        <view style='display: flex;'>
+          <checkbox-group bindchange="agree" class='goods_ft_checkbox'>
+            <label class="checkbox">
+              <checkbox value='同意'checked="{{isagree}}" />我已阅读并同意遵守
+            </label>
+          </checkbox-group>
+          <text catchtap='deliveryTerms' style='color:#0000FF;'>《发货条款》</text>  
+        </view>
+      </view>
+      <view>
+        <button class='goods_ft_subm' style="background-color:{{buttonColor}}" disabled="{{isdisabled}}" 
+        hover-class="goods_ft_subm2" formType="submit">提交订单</button>
+      </view>
+    </view>
+  </form>
+  
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  
+  <view class="modalDlg" wx:if="{{showModal}}">
+      <view class="modalHaed">《至上发货条款》
+        <text class='colse' catchtap='modalColse'>x</text>
+      </view>
+      <scroll-view scroll-y style="height: 800rpx;" scroll-y class='modalBody'>
+        <view style='height:20rpx;'></view>
+        <view>发货人保证所提供的产品货真价实，来源合法，无任何法律纠纷和质量问题。</view> 
+        <view>1.为保证货物安全送达，发货人一旦办理托运，须承担以下义务：</view>
+        <view>（1）发货人应采用“实名制”准确填写网单，如实告知承运人所托运货物的名称、类型、重量、体积、数量、价值，收货人，收货地址、货款（以整数“元”为尾数）等必要信息以便承运人顺利联系到收货人、交付货物或代收货款等；发货人应对所托货物按照行业标准妥善包装，使其适合运输。</view>
+        <view>（2）发货人不得托运或在所托运货物中夹带国家禁止运输的物品；因违背此约定造成承运人的一切经济损失，发货人须全额赔偿并承担相应法律责任。</view>
+        <view>（3）承运人为集货混装运输，发货人应根据发货的性质（尤其是易碎品），提供充分的防破损措施，保障安全运输。</view>
+        <view>（4）对已接受委托，后发现属于承运人不能安全、合法运送的物品（包括但不限于危险品、违禁品等），承运人有保留拒绝运送的权利，并由发货人承担违约责任。</view>
+        <view> 2.关于费用的约定：</view>
+        <view>（1）运费包含接送货费、税金。但不包含按照政府规定收取的费用（如：过路费、过桥费等）、装卸服务费以及由于发货人或收货人的原因而增加的其他费用。</view>
+        <view>（2）发货人不得无故拒付运费；收货人拒绝支付费用的，发货人承担支付与托运物品有关费用的连带责任。收货人无故不支付运费用的，承运人可以对承运货物行使处置权、留置权及其他补救性权利，由此而产生的后果由发货人或收货人承担。</view>
+        <view>（3）发货人同意因特殊原因收货人不执行收货时，原数收回该笔委托运输的所有货物，并向承运人支付货运费和货物调回费用。</view>
+        <view>3.承运人从货物收运时起至交付给收货人时止承担安全运输责任，在此期间若发生货物损毁、短缺、灭失、污染，承运人负赔偿责任。</view>
+        <view>4.以下物品不予托运：军火、武器、盗版的软件或音像制品、非法药品、人类或动物遗体和器官、发票、有价证券、国家禁运的刊物、首饰、护照、私人证件、单证、合同、现金、私人信函、毒品、珠宝、玉器、古玩、字画、邮票、艺术品、稀有金属、液体物品、产地来源不正确的物品、有腐蚀性或放射性的物品、易燃易爆品、白色粉末状的物品、难以客观确定其价值的物品、在经济上或操作上不适合运输的货物以及法律法规禁止的其他物品。</view>
+        <view>5.货运时效按照承运人的公布时效，时效不影响运费的结算。</view>
+        <view>6.承运人对如下损失不承担责任：</view>
+        <view>（1）因不可抗力（包括但不限于自然灾害、政府行为、战争等社会异常事件）造成货物损坏、短缺、灭失、污染、变质或迟延交付；</view>
+        <view>（2）因货物本身的自然性质、质量瑕疵或缺陷、合理损耗等造成的损失；发货人自行包装或容器不良，但从外部无法发现；</view>
+        <view>（3）发货人自行包装，到达时外包装完好而内件缺少或损坏；</view>
+        <view>（4）承运人包装的非新品运输，外包装完好而内件缺少或损坏；</view>
+        <view>（5）由于发货人故意或过失导致损失；</view>
+        <view>（6）承运过程中发生的一切间接损失（包括但不限于对所托运货物的收益、利润、实际用途、特殊商业价值）。</view>
+        <view>7.当发货人现场发货因需求发生变化而填写纸质运单，且填写内容与网单不符时，双方确认以纸质运单填写内容为准。</view>
+        <view> 8.凡因本承诺函或与本承诺函有关的争议，当事人可以通过协商或调解解决，协商或调解不成，任何一方均应向承运人总部所在地人民法院提起诉讼。</view>
+        <view>9. 本承诺函未约定的，或本承诺函与法律法规及行业标准不一致的，按照法律法规和行业标准执行。</view>
+      </scroll-view>
+      <button  class='modelFootr' catchtap='agreement'>同意并不再提醒</button>
+  </view>
+</view>

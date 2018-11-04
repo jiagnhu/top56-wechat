@@ -1,0 +1,86 @@
+<view class='incre'>
+  <view class='incre_bd'>
+    <view class='incre_bd_1'>
+      <view class='incre_bd_1_title'>保价申明</view>
+      <view class='incre_bd_1_value' >
+        <text>元</text><input  bindinput='price' type="number" value='{{incrementList.price}}' 
+        style="text-align:right" placeholder='请填写实际货物价值' maxlength='7' /> 
+      </view>
+    </view>
+    <view class='incre_bd_1'>
+      <view class='incre_bd_1_title'>是否有代收货款</view>
+      <view class='incre_bd_1_value' >
+        <switch class='incre_bd_switch' bindchange="switchChange" checked='{{incrementList.isCollection}}' color="#FE7600" />
+      </view>
+    </view>
+    <view hidden='{{!incrementList.isCollection}}'>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">代收货款</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='number' bindinput='sendName_B'  data-leabl="代收货款" 
+          value='{{incrementList.CollectionGoods}}'  placeholder="请填写实际货物金额" maxlength='7' />
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">开户人</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='text' bindinput='sendName_B'  data-leabl="开户人" 
+          value='{{incrementList.accountOpening}}' placeholder="请输入开户人姓名" maxlength='20' />
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">开户银行</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='text' bindinput='sendName_B' data-leabl="开户银行" 
+          value='{{incrementList.accountOpeningBank}}' placeholder="请输入开户银行名称" maxlength='20' />
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">银行账号</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='number' bindinput='sendName_B' data-leabl="银行账号" 
+          value='{{incrementList.bankAccount}}' placeholder="请输入开户银行账号" maxlength='20'  />
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">身份证号</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='idcard' bindinput='sendName_B'  data-leabl="身份证号" 
+          value='{{incrementList.IDnumber}}' placeholder="请输入身份证号码" maxlength='20' />
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">开户电话</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='number' bindinput='sendName_B'  data-leabl="开户人电话" 
+          value='{{incrementList.householdPhone}}' placeholder="请输入开户人电话" maxlength='11' />
+        </view>
+      </view>
+    </view>
+    
+    <picker bindchange="selectSingle" value="{{index}}"  range-key="fieldName" range="{{array}}">
+      <view class='incre_bd_1' >
+        <view class='incre_bd_1_title'>签收单返还</view>
+        <view class='incre_bd_1_value' >
+          <image src='http://118.31.54.90:8010/WinXinPic/ico_jum@2x.png'></image>
+          <text style='color:#999999;'>{{incrementList.signReceipt}}</text> 
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class='incre_fd'>
+    <button catchtap='determine' disabled='{{isdisabled}}' style='background-color: {{buttonColor}};color:#fff;'>确定</button>
+  </view>
+</view>

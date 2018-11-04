@@ -1,0 +1,91 @@
+.incre{
+  height: 100vh;
+}
+
+.incre_bd{
+  font-size: 28rpx;
+}
+
+.incre_bd_1{
+  height: 88rpx;
+  border-bottom: 1px solid #E5E5E5;
+  display: flex;
+  padding: 0rpx 44rpx;
+}
+
+.incre_bd_1 view {
+  width: 50%;
+  line-height: 88rpx;
+}
+
+.incre_bd_1_title{
+  color: #333;
+}
+
+.incre_bd_1_value{
+  
+  display: flex;
+  flex-direction:row-reverse;
+  color: #333333;
+  
+}
+
+.incre_bd_1_value input{
+  width: 250rpx;
+  margin-right: 12rpx;
+  margin-top: 18rpx;
+}
+
+.incre_bd_1_value image{
+  width: 16rpx;
+  height: 30rpx;
+  margin: 28rpx 0rpx 0rpx 20rpx;
+}
+
+.incre_fd{
+  margin: 60rpx 44rpx 0rpx 44rpx;
+}
+
+.incre_fd button{
+  font-size: 24rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  border-radius: 0rpx;
+}
+
+
+.added_cell_input{
+  display: flex;
+  flex-direction: row;
+  height: 88rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.added_cell__hd{
+  width: 114rpx;
+  text-align:justify; 
+  text-align-last:justify;  
+  line-height:0;
+}
+
+.added-label{
+  padding-left: 44rpx;
+  width:100%; 
+  display:inline-block; 
+  height:100%; 
+  line-height: 88rpx; 
+  text-align:center; 
+  text-decoration:none;
+}
+
+.added_cell__bd{
+  padding-left: 46rpx;
+  width: 560rpx;
+  display: flex;
+  align-items: center;
+}
+
+.added-input{
+  width: 100%;
+  padding-left: 20rpx;
+}

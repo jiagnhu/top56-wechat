@@ -1,0 +1,145 @@
+page{
+  background-color: #F2F2F2;
+  position: relative;
+}
+.added_cell{
+  height: 410rpx;
+  background-color: #fff;
+}
+
+.added_cell_input{
+  display: flex;
+  flex-direction: row;
+  height: 88rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.added_cell__hd{
+  width: 114rpx;
+  text-align:justify; 
+  text-align-last:justify;  
+  line-height:0;
+}
+
+.added-label{
+  padding-left: 24rpx;
+  width:100%; 
+  display:inline-block; 
+  height:100%; 
+  line-height: 88rpx; 
+  text-align:center; 
+  text-decoration:none;
+}
+
+.added_cell__bd{
+  padding-left: 46rpx;
+  width: 560rpx;
+  display: flex;
+  align-items: center;
+}
+
+.added_cell__bd2{
+  padding-left: 46rpx;
+  width: 560rpx;
+  margin-top: 26rpx;
+}
+
+.details{
+  height: 80rpx;
+  width: 100%;
+}
+
+.added-input{
+  width: 100%;
+}
+
+.added_ft{
+  position: absolute;
+  bottom: 20rpx;
+  height: 68rpx;
+  width: 88%;
+  padding: 0rpx 44rpx;
+}
+
+.added_ft_button{
+  height: 100%;
+  line-height: 68rpx;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 0rpx;
+}
+
+.added_ft_color {
+  background-color: #999;
+}
+
+.ssqSelect{
+  height: 100vh;
+  width: 99.5%;
+  background-color: #fff;
+  position: absolute;
+  top: 0rpx;
+  z-index: 100;
+}
+
+.operation{
+  height: 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 20rpx;
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.operation_close{
+  position: absolute;
+  right: 40rpx;
+}
+
+.totCity_select{
+  height: 120rpx;
+  margin: 0rpx 84rpx;
+}
+
+.totCity_often{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+
+.areaList{
+  height: 830rpx;
+}
+
+.selected_area{
+  color: #999;
+  font-size: 24rpx;
+  height: 56rpx;
+  display: flex;
+}
+
+.selected_area_input{
+  width: 112rpx;
+  height: 36rpx;
+  overflow:hidden;
+  padding-left: 24rpx;
+}
+
+.areaList_input{
+  border-bottom: 1rpx solid #999;
+  padding-left: 28rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+
+}
+
+.totCity_title{
+  color: #999999;
+  font-size: 24rpx;
+  margin-left: 24rpx;
+}
+

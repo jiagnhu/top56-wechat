@@ -1,0 +1,83 @@
+<view class='page added'>
+  <form bindsubmit="preservation">
+    <view class="added_cell">
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">姓名</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" type='text' bindinput='sendName_A' name="sendName" data-leabl="sendName" value='{{information.sendName}}' placeholder="请输入姓名" maxlength='20' />
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">联系电话</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" name="sendTel" bindinput='sendName_A' type='number' data-leabl="sendTel" value='{{information.sendTel}}' placeholder="请输入联系电话" maxlength='11' />
+        </view>
+      </view>
+      <view class="added_cell_input">
+        <view class="added_cell__hd">
+          <view class="added-label">所在地区</view>
+        </view>
+        <view class="added_cell__bd">
+          <input class="added-input" name="ssq" bindtap='select_SSQ' data-leabl="ssq" disabled value='{{information.ssq}}' placeholder="请选择城市" />
+        </view>
+      </view>
+      <view class="added_cell_input" style='height:142rpx;'>
+        <view class="added_cell__hd">
+          <view class="added-label">详细地址</view>
+        </view>
+        <view class="added_cell__bd2">
+          <textarea class='details' maxlength='70' name="sendAddess" value='{{information.sendAddess}}' data-leabl="sendAddess" bindinput='sendName_A' fixed="true" hidden='{{ishidden}}'>
+          </textarea>
+        </view>
+      </view>
+    </view>
+    <view style='height:66rpx;'>
+    </view>
+    <view class='added_ft'>
+      <button class='added_ft_button' style="background-color:{{buttonColor}}" 
+      disabled='{{isdisabled}}'  hover-class="added_ft_color" formType="submit">保存</button>
+    </view>
+  </form>
+  <view class='ssqSelect' style='display:{{z_index}}'>
+    <view class='operation'>
+      <view>选择地区 </view>
+      <view class='operation_close' bindtap='close'>关闭</view>
+    </view>
+    <view class='totCity'>
+      <view class='totCity_title'>热门城市</view>
+      <view class='totCity_select'>
+        <view class='totCity_often'>
+          <view bindtap='select_cityr' data-number="49106" data-numberd="49107" data-label="北京市" data-superior='北京市'>
+          北京</view>
+          <view bindtap='select_cityr' data-number="55122" data-numberd="55123" data-label="上海市" data-superior='上海市'>
+          上海</view>
+          <view bindtap='select_cityr' data-number="57706" data-numberd="57707" data-label="杭州市" data-superior='浙江省'>
+          杭州</view>
+
+        </view>
+        <view class='totCity_often'>
+          <view bindtap='select_cityr' data-number="73762" data-numberd="74852" data-label="深圳市" data-superior='广东省'>
+          深圳</view>
+          <view bindtap='select_cityr' data-number="73762" data-numberd="69089" data-label="东莞市" data-superior='广东省'>
+          东莞</view>
+          <view bindtap='select_cityr' data-number="73762" data-numberd="73763" data-label="广州市" data-superior='广东省'>
+          广州</view>
+        </view>
+      </view>
+    </view>
+    <view class='selected_area'>
+      <view class="selected_area_input" catchtap='select_province' data-kind="{{select_provinced.kind}}" data-number="{{select_provinced.number}}">{{select_provinced.label}}</view>
+      <view class='selected_area_input' catchtap='select_city' data-kind="{{select_city.kind}}" data-number="{{select_provinced.number}}">{{select_city.label}}</view>
+      <view class='selected_area_input' catchtap='select_area' data-kind="{{select_area.kind}}" data-number="{{select_area.number}}">{{select_area.label}}</view>
+    </view>
+    <scroll-view scroll-y class='areaList'>
+      <view class='areaList_input' catchtap='select' data-label="{{item.mName}}" data-number="{{item.number}}" data-code='code' wx:for="{{province}}" wx:key="{{index}}">
+        {{item.mName}}
+      </view>
+    </scroll-view>
+  </view>
+</view>

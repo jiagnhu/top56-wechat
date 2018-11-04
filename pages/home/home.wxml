@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view class="page home">
+  <view class="page__hd home_hd">
+    <view class='weui-flex home_title'>
+      <image src="http://118.31.54.90:8010/WinXinPic/ico_home_element@2x.png" class='home_imag'></image>
+      <view>
+        <image src='http://118.31.54.90:8010/WinXinPic/icp_home_logo@2x.png' class='home_imag2'></image>
+      </view>
+    </view>
+    <view class="weui-flex home-search">
+      <view class="weui-flex__item">
+        <input placeholder-class="phcolor" placeholder="请输入要查的订单号" value='{{oddNumbers}}' class="home_search"
+        bindfocus='getfocus' bindblur='getblur' bindinput='setOddNumbers' maxlength='30' />
+        <view class='home-search_icon' wx:if="{{isSearch}}">
+          <image src='http://118.31.54.90:8010/WinXinPic/ico_home_scan@2x.png' class='home-search_icon_img'
+          catchtap='scanCode'></image>
+        </view>
+        <view class='home-search_icon' wx:else>
+          <image src='http://118.31.54.90:8010/WinXinPic/-s-guanbi@2x.png' class='home-search_icon_img2'
+          bindtap='deleteInput'></image>
+          <view style='border-left:1rpx solid #fff;'></view>
+          <image src='http://118.31.54.90:8010/WinXinPic/sousuo@2x.png' class='home-search_icon_img'
+          bindtap='search'></image>
+        </view>
+
+
+      </view>
+    </view>
+    <view class="weui-flex home_link">
+      <view class="placeholder1 home_link_group" bindtap="linkGoods">
+        <image src='http://118.31.54.90:8010/WinXinPic/ico_home_deliver@2x.png' class='home_imag_deliver'></image>
+        <view class='home_link_text'>我要发货</view>
+      </view>
+      <view class="placeholder2 home_link_group" bindtap="linkOrder">
+        <image src='http://118.31.54.90:8010/WinXinPic/ico_home_order@2x.png' class='home_imag_deliver'></image>
+        <view class='home_link_text'>我的订单</view>
+      </view>
+      <view class="placeholder3 home_link_group" bindtap="linkAddress">
+        <image src='http://118.31.54.90:8010/WinXinPic/ico_home_adm@2x.png' class='home_imag_deliver'></image>
+        <view class='home_link_text'>地址管理</view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd  home_bd">
+    <view class='home_bd_empty' wx:if="{{!isRecord}}">
+      <image src='http://118.31.54.90:8010/WinXinPic/ico_home_feedback@2x.png'></image>
+      <view>您还没有发过货哦~</view>
+      <button style='background-color:#FE7600;' bindtap="linkGoods">我要发货</button>
+    </view>
+    <scroll-view scroll-y  wx:else  class='home_bd_Waybill'>
+      <view class='order_content' wx:for="{{sendInifList}}" wx:key="{{index}}" bindtap='homeViewDetails' 
+      data-planno="{{item.planNO}}" data-status="{{item.status}}">
+        <view class='order_up'>
+          <view>
+          <image  src='http://118.31.54.90:8010/WinXinPic/ico_send@2x.png' class='order_imag'></image>
+          {{item.planNO}}
+          </view>
+          <view style='color:#0D449D'>至上快运</view>
+        </view>
+        <view class='order_inif'>
+          <view class='order_inif_send'>
+            <view class='order_inif_adderss'>{{item.sdStation}}</view>
+            <view class='order_inif_name'>{{item.sdName}}</view>
+          </view>
+          <view class='order_inif_icon' style="background-image: url({{item.stateImag}});background-size:cover;">
+            <text>{{item.status}}</text>
+          </view>
+          <view class='order_inif_conle'>
+            <view class='order_inif_adderss'>{{item.deliStation}}</view>
+            <view class='order_inif_name'>{{item.reConsinee}} </view>
+          </view>
+        </view>
+        <view class='order_time'>下单时间：{{item.planDate}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

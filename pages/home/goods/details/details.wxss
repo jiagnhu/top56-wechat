@@ -1,0 +1,99 @@
+
+.details{
+  height: 100vh;
+  background-color: #F2F2F2;
+}
+
+.details_hd{
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  background-color: #ffffff;
+}
+
+.details_button{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22rpx;
+}
+
+.details_button view{
+  display: flex;
+  justify-content:center;
+  border: 2rpx solid #999999;
+  border-radius: 10rpx;
+  width: 158rpx;
+  height:54rpx;
+  line-height: 54rpx;
+  font-size: 28rpx;
+}
+.colorStyle2 {
+  color: #999999;
+}
+.colorStyle{
+  background-color: #FE7600;
+  color: #ffffff;
+}
+
+.details_number{
+  display: flex;
+  
+}
+
+.details_number text{
+  margin-left: 24rpx;
+  width: 140rpx;
+  line-height: 68rpx;
+}
+
+.details_number input{
+  width: 156rpx;
+  height: 68rpx;
+  text-align:center;
+}
+
+.details_number button{
+  height: 68rpx; 
+  line-height: 68rpx;
+  font-size: 60rpx;
+  background-color: #fff;
+}
+
+.details_text{
+   text-align:justify;  text-align-last:justify;  line-height:0;
+}
+
+.details_text text{
+  width:100%; display:inline-block; height:100%; line-height:21px; text-align:center; text-decoration:none;
+}
+
+.details_bd view{
+  height: 68rpx;
+  margin-top: 20rpx;
+  background-color: #ffffff;
+}
+
+.details_fd{
+  height: 68rpx;
+  margin:62rpx 44rpx 0rpx 44rpx;
+}
+
+.details_fd button{
+  border-radius: 0px;
+  height: 68rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+} 
+.other{
+  height:80rpx; 
+  background-color:#fff;
+  margin-top:20rpx;
+}
+
+.other_input{
+  height:100%;
+  padding-left: 24rpx;
+}
+
+.button_border{
+  border: 1rpx solid #E5E5E5;
+}
